@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 0f0ad6b85a20d4eac98c378e2cbd6b64
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Market.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/Main_backup.unity
+    guid: 9bda12c6ea7cf425795c93b437180efe
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
