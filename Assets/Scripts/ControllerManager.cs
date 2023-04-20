@@ -25,6 +25,7 @@ public class ControllerManager : MonoBehaviour
             if (grabbedObject != null)
             {
                 grabbedObject.GetComponent<GrabbableObject>().Grab(0.0f);
+                grabbedObject = null;
             }
         }
     }
