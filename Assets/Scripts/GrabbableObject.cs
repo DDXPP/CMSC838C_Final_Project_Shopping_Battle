@@ -21,7 +21,7 @@ public class GrabbableObject : MonoBehaviour
         {
             this.transform.parent = controller.transform;
             this.GetComponent<Rigidbody>().isKinematic = true;
-            // this.GetComponent<Rigidbody>().useGravity = false;
+            this.GetComponent<Rigidbody>().useGravity = false;
 
         } 
         else
@@ -29,7 +29,7 @@ public class GrabbableObject : MonoBehaviour
             this.transform.parent = null;
             this.GetComponent<Rigidbody>().isKinematic = false;
             // this.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
-            // this.GetComponent<Rigidbody>().useGravity = true;
+            this.GetComponent<Rigidbody>().useGravity = true;
         }   
     }
 
