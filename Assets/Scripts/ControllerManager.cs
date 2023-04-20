@@ -20,6 +20,13 @@ public class ControllerManager : MonoBehaviour
         {   
             GrabObject(GetRightTriggerPress());
         }
+        else 
+        {
+            if (grabbedObject != null)
+            {
+                grabbedObject.GetComponent<GrabbableObject>().Grab(0.0f);
+            }
+        }
     }
 
     Vector3 GetPointingDir() 
@@ -46,7 +53,7 @@ public class ControllerManager : MonoBehaviour
             float distance;
             float nearestDistance = float.MaxValue;
 
-            Collider[] hitColliders = Physics.OverlapSphere(GetPosition(), 1.0f);
+            Collider[] hitColliders = Physics.OverlapSphere(GetPosition(), 0.2f);
             for (int i = 0; i < hitColliders.Length; i++)
             {
                 distance = (GetPosition() - hitColliders[i].gameObject.transform.position).sqrMagnitude;
