@@ -10,7 +10,7 @@ public class Fly : MonoBehaviour
 
     void Start() 
     {
-        playerMovingSpeed = 7.0f;
+        playerMovingSpeed = 3.0f;
     }
 
     void Update()

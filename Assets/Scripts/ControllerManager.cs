@@ -6,6 +6,7 @@ public class ControllerManager : MonoBehaviour
 {
     GameObject grabbedObject;
     public Rigidbody player;
+    // float tempPressValue = 0.5f;
 
     void Start()
     {
@@ -15,19 +16,39 @@ public class ControllerManager : MonoBehaviour
 
     void Update()
     {
-        // use right hand trigger to grab object
-        if (GetRightTriggerPress() > 0.0f)
-        {   
-            GrabObject(GetRightTriggerPress());
-        }
-        else 
-        {
-            if (grabbedObject != null)
-            {
-                grabbedObject.GetComponent<GrabbableObject>().Grab(0.0f);
-                grabbedObject = null;
-            }
-        }
+        // if (grabbedObject == null)
+        // {
+        //     GameObject nearestObject = null;
+        //     float distance;
+        //     float nearestDistance = float.MaxValue;
+        //     Collider[] hitColliders = Physics.OverlapSphere(GetPosition(), 5.0f);
+        //     foreach (Collider collider in hitColliders)
+        //     {
+        //         distance = (GetPosition() - collider.gameObject.transform.root.gameObject.transform.position).sqrMagnitude;
+        //         if (distance < nearestDistance) 
+        //         {
+        //             if (collider.gameObject.transform.root.gameObject.GetComponent<GrabbableObject>() != null) 
+        //             {
+        //                 nearestDistance = distance; 
+        //                 if (nearestObject == null)
+        //                 {
+        //                     nearestObject = collider.gameObject.transform.root.gameObject;  
+        //                 }
+        //                 else if (nearestObject != collider.gameObject.transform.root.gameObject) {
+        //                     nearestObject = collider.gameObject.transform.root.gameObject;  
+        //                 }
+                        
+        //                 Debug.Log("nearestObject------------" + nearestObject.name + "  " + nearestDistance);
+        //             }
+        //         } 
+        //     }
+        //     grabbedObject = nearestObject;
+        //     Debug.Log("grabbedObject------------------" + grabbedObject.name);
+        // }
+        // grabbedObject.transform.position += new Vector3(0.05f * Time.deltaTime, 0, 0);
+
+
+        GrabObject(GetRightTriggerPress());
     }
 
     Vector3 GetPointingDir() 
@@ -48,30 +69,51 @@ public class ControllerManager : MonoBehaviour
 
     void GrabObject(float pressedValue)
     {
-        if (grabbedObject == null)
+        if (pressedValue == 0.0f && grabbedObject != null) 
         {
-            GameObject nearestObject = null;
-            float distance;
-            float nearestDistance = float.MaxValue;
-
-            Collider[] hitColliders = Physics.OverlapSphere(GetPosition(), 0.2f);
-            for (int i = 0; i < hitColliders.Length; i++)
+            grabbedObject.GetComponent<GrabbableObject>().Grab(pressedValue);
+            grabbedObject = null;
+        }
+        else if (pressedValue > 0.0f)
+        {
+            if (grabbedObject == null)
             {
-                distance = (GetPosition() - hitColliders[i].gameObject.transform.position).sqrMagnitude;
-                if (distance < nearestDistance) 
+                GameObject nearestObject = null;
+                float distance;
+                float nearestDistance = float.MaxValue;
+
+                Collider[] hitColliders = Physics.OverlapSphere(GetPosition(), 0.2f);
+                foreach (Collider collider in hitColliders)
                 {
-                    if (hitColliders[i].gameObject.GetComponent<GrabbableObject>() != null) 
+                    distance = (GetPosition() - collider.gameObject.transform.root.gameObject.transform.position).sqrMagnitude;
+                    if (distance < nearestDistance) 
                     {
-                        nearestDistance = distance; 
-                        nearestObject = hitColliders[i].gameObject;
-                    }
-                } 
+                        // if (collider.gameObject.GetComponent<GrabbableObject>() != null) 
+                        // {
+                        //     nearestDistance = distance; 
+                        //     nearestObject = collider.gameObject;
+                        // }
+                        if (collider.gameObject.transform.root.gameObject.GetComponent<GrabbableObject>() != null) 
+                        {
+                            nearestDistance = distance; 
+                            if (nearestObject == null)
+                            {
+                                nearestObject = collider.gameObject.transform.root.gameObject;  
+                            }
+                            else if (nearestObject != collider.gameObject.transform.root.gameObject) {
+                                nearestObject = collider.gameObject.transform.root.gameObject;  
+                            }
+                            
+                            // Debug.Log("nearestObject------------" + nearestObject.name + "  " + nearestDistance);
+                        }
+                    } 
+                }
+
+                // if (nearestObject != null)
+                    grabbedObject = nearestObject;  
             }
 
-            if (nearestObject != null)
-                grabbedObject = nearestObject;  
+            grabbedObject.GetComponent<GrabbableObject>().Grab(pressedValue);
         }
-
-        grabbedObject.GetComponent<GrabbableObject>().Grab(pressedValue);
     }
 }
