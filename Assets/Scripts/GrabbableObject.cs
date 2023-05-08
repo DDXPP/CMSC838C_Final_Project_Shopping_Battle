@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GrabbableObject : MonoBehaviour
 {
-    public GameObject controller;
+    public GameObject LController;
+    public GameObject RController;
 
     bool isGrabbed;   
+    bool isLeftController;
 
     void Start()
     {
@@ -16,26 +18,31 @@ public class GrabbableObject : MonoBehaviour
 
     void Update()
     {
-        // if (isGrabbed) 
-        // {
-        //     this.transform.parent = controller.transform;
-        //     this.GetComponent<Rigidbody>().isKinematic = true;
-        //     this.GetComponent<Rigidbody>().useGravity = false;
+        if (isGrabbed) 
+        {
+            this.transform.parent = isLeftController ? LController.transform : RController.transform;
+            this.GetComponent<Rigidbody>().isKinematic = true;
+            this.GetComponent<Rigidbody>().useGravity = false;
 
-        // } 
-        // else
-        // {
-        //     this.transform.parent = null;
-        //     this.GetComponent<Rigidbody>().isKinematic = false;
-        //     this.GetComponent<Rigidbody>().useGravity = true;
-        // }   
+        } 
+        else
+        {
+            this.transform.parent = null;
+            this.GetComponent<Rigidbody>().isKinematic = false;
+            this.GetComponent<Rigidbody>().useGravity = true;
+        }   
     }
 
-    public void Grab(float triggerPress)
+    public void Grab(float triggerPress, string leftOrRight)
     {
         if (triggerPress > 0.0f)
             isGrabbed = true;
         else 
             isGrabbed = false;
+        
+        if (leftOrRight == "left")
+            isLeftController = true;
+        else 
+            isLeftController = false;
     }
 }

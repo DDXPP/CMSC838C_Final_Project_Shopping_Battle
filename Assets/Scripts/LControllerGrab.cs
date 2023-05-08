@@ -42,10 +42,10 @@ public class LControllerGrab : MonoBehaviour
     {
         if (pressedValue == 0.0f && grabbedObject != null) 
         {
-            // grabbedObject.GetComponent<GrabbableObject>().Grab(pressedValue);
-            grabbedObject.transform.parent = null;
-            grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-            grabbedObject.GetComponent<Rigidbody>().useGravity = true;
+            grabbedObject.GetComponent<GrabbableObject>().Grab(pressedValue, "left");
+            // grabbedObject.transform.parent = null;
+            // grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+            // grabbedObject.GetComponent<Rigidbody>().useGravity = true;
             grabbedObject = null;
         }
         else if (pressedValue > 0.0f)
@@ -80,10 +80,10 @@ public class LControllerGrab : MonoBehaviour
                     grabbedObject = nearestObject;  
             }
 
-            // grabbedObject.GetComponent<GrabbableObject>().Grab(pressedValue);
-            grabbedObject.transform.parent = this.transform;
-            grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+            grabbedObject.GetComponent<GrabbableObject>().Grab(pressedValue, "left");
+            // grabbedObject.transform.parent = this.transform;
+            // grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
+            // grabbedObject.GetComponent<Rigidbody>().useGravity = false;
         }
     }
 }
