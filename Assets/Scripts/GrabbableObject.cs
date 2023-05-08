@@ -16,19 +16,19 @@ public class GrabbableObject : MonoBehaviour
 
     void Update()
     {
-        if (isGrabbed) 
-        {
-            this.transform.parent = controller.transform;
-            this.GetComponent<Rigidbody>().isKinematic = true;
-            this.GetComponent<Rigidbody>().useGravity = false;
+        // if (isGrabbed) 
+        // {
+        //     this.transform.parent = controller.transform;
+        //     this.GetComponent<Rigidbody>().isKinematic = true;
+        //     this.GetComponent<Rigidbody>().useGravity = false;
 
-        } 
-        else
-        {
-            this.transform.parent = null;
-            this.GetComponent<Rigidbody>().isKinematic = false;
-            this.GetComponent<Rigidbody>().useGravity = true;
-        }   
+        // } 
+        // else
+        // {
+        //     this.transform.parent = null;
+        //     this.GetComponent<Rigidbody>().isKinematic = false;
+        //     this.GetComponent<Rigidbody>().useGravity = true;
+        // }   
     }
 
     public void Grab(float triggerPress)
