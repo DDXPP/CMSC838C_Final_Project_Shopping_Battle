@@ -14,7 +14,6 @@ public class GrabbableObject : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isGrabbed) 
@@ -28,7 +27,6 @@ public class GrabbableObject : MonoBehaviour
         {
             this.transform.parent = null;
             this.GetComponent<Rigidbody>().isKinematic = false;
-            // this.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
             this.GetComponent<Rigidbody>().useGravity = true;
         }   
     }

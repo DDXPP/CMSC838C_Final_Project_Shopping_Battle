@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This script is created for grabbing and dropping objects. 
-// Attach this script to Left/RightControllerAnchor
-public class ControllerManager : MonoBehaviour
+// Attach this script to Left/RightHandAnchor
+public class RControllerGrab : MonoBehaviour
 {
+    
     GameObject grabbedObject;
     public Rigidbody player;
     // float tempPressValue = 0.5f;

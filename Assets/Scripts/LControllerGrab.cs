@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This script is created for grabbing and dropping objects. 
-// Attach this script to Left/RightControllerAnchor
-public class ControllerManager : MonoBehaviour
+// Attach this script to Left/RightHandAnchor
+public class LControllerGrab : MonoBehaviour
 {
+
     GameObject grabbedObject;
     public Rigidbody player;
     // float tempPressValue = 0.5f;
@@ -18,7 +19,7 @@ public class ControllerManager : MonoBehaviour
 
     void Update()
     {
-        GrabObject(GetRightTriggerPress());
+        GrabObject(GetLeftTriggerPress());
     }
 
     Vector3 GetPointingDir() 
@@ -32,9 +33,9 @@ public class ControllerManager : MonoBehaviour
     }
 
 
-    float GetRightTriggerPress()
+    float GetLeftTriggerPress()
     {
-        return OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+        return OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
     }
 
     void GrabObject(float pressedValue)

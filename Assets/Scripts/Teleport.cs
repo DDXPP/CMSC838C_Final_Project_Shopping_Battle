@@ -5,9 +5,6 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject player;
-    public GameObject positionMarkerPrefab;
-    public GameObject arrowPrefab;
-
     private GameObject positionMarker;
     private GameObject arrow;
 
@@ -20,13 +17,7 @@ public class Teleport : MonoBehaviour
     bool selectingDirection = false;
     Vector3 teleportPos = new Vector3();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {   
         var joystickAxisR = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.RTouch);
@@ -70,29 +61,6 @@ public class Teleport : MonoBehaviour
             player.transform.position = new Vector3(teleportPos.x, player.transform.position.y, teleportPos.z); 
             player.transform.rotation = arrow.transform.rotation;
         }
-
-        // if (selectingDirection)
-        // {
-        //     if (joystickAxisR.x > 0.0f)
-        //     {
-        //         arrow.transform.Rotate(new Vector3(0, 15, 0) * 5.0f * Time.deltaTime);
-        //     }
-        //     if (joystickAxisR.x < 0.0f)
-        //     {
-        //         arrow.transform.Rotate(new Vector3(0, -15, 0) * 5.0f * Time.deltaTime);
-        //     }
-
-        //     if (OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.RTouch))
-        //     {
-        //         selectingDirection = false;
-        //         Destroy(positionMarker); 
-        //         Destroy(arrow);
-        //         player.transform.position = new Vector3(teleportPos.x, player.transform.position.y, teleportPos.z); 
-        //         player.transform.rotation = arrow.transform.rotation;
-                
-        //     }
-        // }
-        
     }
 
 }
