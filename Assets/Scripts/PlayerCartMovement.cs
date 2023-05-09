@@ -29,7 +29,6 @@ public class PlayerCartMovement : MonoBehaviour
         
         float distanceBetweenPlayerAndShoppingCart = Vector3.Distance(this.transform.position, shoppingCart.transform.position);
         if (distanceBetweenPlayerAndShoppingCart < 1.5f & (isLeftIndexTriggerPressed() | isRightIndexTriggerPressed()))
-        // if (distanceBetweenPlayerAndShoppingCart < 3.0f)
         {
             // var shoppingCartY = shoppingCart.transform.position.y;
             // shoppingCart.transform.parent = centerEyeAnchor.transform;
@@ -39,7 +38,7 @@ public class PlayerCartMovement : MonoBehaviour
             // shoppingCart.transform.parent = this.transform;
             // shoppingCart.transform.position = centerEyeAnchor.transform.position + centerEyeAnchor.transform.forward * 1;
             shoppingCart.transform.position = new Vector3(centerEyeAnchor.transform.position.x, shoppingCart.transform.position.y, centerEyeAnchor.transform.position.z)
-                                            + 1* (new Vector3(centerEyeAnchor.transform.forward.x, 0, centerEyeAnchor.transform.forward.z)); 
+                                            + 1 * (new Vector3(centerEyeAnchor.transform.forward.x, 0, centerEyeAnchor.transform.forward.z)); 
 
             shoppingCart.transform.rotation = Quaternion.Euler(0, centerEyeAnchor.transform.rotation.eulerAngles.y, 0);
             shoppingCart.transform.Rotate(new Vector3(0, 90, 0));
