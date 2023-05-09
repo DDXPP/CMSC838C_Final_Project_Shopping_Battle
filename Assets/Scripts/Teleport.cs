@@ -14,7 +14,6 @@ public class Teleport : MonoBehaviour
     public Material redLineMat, greenLineMat;
 
     bool aboutToTeleport = false;
-    bool selectingDirection = false;
     Vector3 teleportPos = new Vector3();
 
 
