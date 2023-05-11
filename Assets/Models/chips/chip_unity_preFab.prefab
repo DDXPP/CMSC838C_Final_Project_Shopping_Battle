@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4534887005603824783}
   m_Layer: 0
   m_Name: chip_unity_preFab
-  m_TagString: Untagged
+  m_TagString: Item_Chips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

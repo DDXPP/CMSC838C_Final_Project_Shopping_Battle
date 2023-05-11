@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5302362860105368706}
   m_Layer: 0
   m_Name: airpod
-  m_TagString: Untagged
+  m_TagString: Item_AirPods
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,51 +56,63 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6436530858010888564}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+    - target: {fileID: 919132149155446097, guid: 281517744a5a053468a2132fae021cfb,
+        type: 3}
       propertyPath: m_Name
       value: airpod
       objectReference: {fileID: 0}
@@ -108,7 +120,8 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 281517744a5a053468a2132fae021cfb, type: 3}
 --- !u!1 &2770227071360327234 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 281517744a5a053468a2132fae021cfb,
+    type: 3}
   m_PrefabInstance: {fileID: 3076164196909933331}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &6550740727142599227
@@ -127,6 +140,7 @@ MeshCollider:
   m_Mesh: {fileID: 4068373912626513877, guid: 281517744a5a053468a2132fae021cfb, type: 3}
 --- !u!4 &3258919979963778296 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb, type: 3}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 281517744a5a053468a2132fae021cfb,
+    type: 3}
   m_PrefabInstance: {fileID: 3076164196909933331}
   m_PrefabAsset: {fileID: 0}

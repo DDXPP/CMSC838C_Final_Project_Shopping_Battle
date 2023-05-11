@@ -5,6 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - Item_Chips
+  - Item_MMs
+  - Item_Bose
+  - Item_AirPods
+  - Item_Coke
+  - Item_Dyson
+  - Item_Jam
+  - Item_Protein
+  - Item_PS5
+  - Item_RiceCooker
+  - Item_Switch
+  - Item_Tide
+  - Item_Tissue
   layers:
   - Default
   - TransparentFX
