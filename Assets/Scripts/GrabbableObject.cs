@@ -9,11 +9,58 @@ public class GrabbableObject : MonoBehaviour
 
     bool isGrabbed;   
     bool isLeftController;
+    float price;
 
     void Start()
     {
         isGrabbed = false;
+        switch (this.tag)
+        {
+            case "Item_Chips":
+                price = 4.0f;
+                break;
+            case "Item_MMs":
+                price = 1.0f;
+                break;
+            case "Item_Bose":
+                price = 150.0f;
+                break;
+            case "Item_AirPods":
+                price = 250.0f;
+                break;
+            case "Item_Coke":
+                price = 7.0f;
+                break;
+            case "Item_Dyson":
+                price = 750.0f;
+                break;
+            case "Item_Jam":
+                price = 5.0f;
+                break;
+            case "Item_Protein":
+                price = 50.0f;
+                break;
+            case "Item_PS5":
+                price = 500.0f;
+                break;
+            case "Item_RiceCooker":
+                price = 40.0f;
+                break;
+            case "Item_Switch":
+                price = 350.0f;
+                break;
+            case "Item_Tide":
+                price = 20.0f;
+                break;
+            case "Item_Tissue":
+                price = 2.0f;
+                break;
+        }
+    }
 
+    public float GetPrice()
+    {
+        return price;
     }
 
     void Update()
