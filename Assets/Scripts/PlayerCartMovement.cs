@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCartMovement : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class PlayerCartMovement : MonoBehaviour
         playerMovingSpeed = 3.0f;
     }
 
+    private void Respawn()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
     void Update()
     {
         // Get joystick input
@@ -25,8 +31,16 @@ public class PlayerCartMovement : MonoBehaviour
         float pressedForce = Mathf.Abs(joystickAxisL.x) > Mathf.Abs(joystickAxisL.y) ? Mathf.Abs(joystickAxisL.x) : Mathf.Abs(joystickAxisL.y);
 
         // Player locomotion
-        transform.position += Quaternion.Euler(0, rig.transform.rotation.eulerAngles.y, 0) * (new Vector3(joystickAxisL.x * playerMovingSpeed * Time.deltaTime, 0, joystickAxisL.y * playerMovingSpeed * Time.deltaTime));
-        
+        if (OVRInput.GetUp(OVRInput.RawButton.X))
+        {
+            Respawn();
+        }
+        else
+        {
+            transform.position += Quaternion.Euler(0, rig.transform.rotation.eulerAngles.y, 0) * (new Vector3(joystickAxisL.x * playerMovingSpeed * Time.deltaTime, 0, joystickAxisL.y * playerMovingSpeed * Time.deltaTime));
+        }
+        Debug.Log("Player position: " + transform.position);
+
         float distanceBetweenPlayerAndShoppingCart = Vector3.Distance(this.transform.position, shoppingCart.transform.position);
         if (distanceBetweenPlayerAndShoppingCart < 1.5f & (isLeftIndexTriggerPressed() | isRightIndexTriggerPressed()))
         {
