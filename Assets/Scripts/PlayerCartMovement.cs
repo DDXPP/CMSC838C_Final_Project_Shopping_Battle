@@ -11,6 +11,9 @@ public class PlayerCartMovement : MonoBehaviour
     public GameObject centerEyeAnchor;
     float playerMovingSpeed;
 
+    public checkOutSum checkout_script;
+    public bool gameover_copy;
+
     void Start() 
     {
         playerMovingSpeed = 3.0f;
@@ -19,6 +22,15 @@ public class PlayerCartMovement : MonoBehaviour
     private void Respawn()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+    private void GameOverFreeze()
+    {
+        gameover_copy = checkout_script.gameover;
+        if (gameover_copy == true)
+        {
+            player.constraints = RigidbodyConstraints.FreezePosition;
+        }
     }
 
     void Update()
@@ -30,6 +42,8 @@ public class PlayerCartMovement : MonoBehaviour
         // Use pressed force to determine moving speed
         float pressedForce = Mathf.Abs(joystickAxisL.x) > Mathf.Abs(joystickAxisL.y) ? Mathf.Abs(joystickAxisL.x) : Mathf.Abs(joystickAxisL.y);
 
+        //GameOverFreeze();
+
         // Player locomotion
         if (OVRInput.GetUp(OVRInput.RawButton.X))
         {
@@ -39,7 +53,6 @@ public class PlayerCartMovement : MonoBehaviour
         {
             transform.position += Quaternion.Euler(0, rig.transform.rotation.eulerAngles.y, 0) * (new Vector3(joystickAxisL.x * playerMovingSpeed * Time.deltaTime, 0, joystickAxisL.y * playerMovingSpeed * Time.deltaTime));
         }
-        Debug.Log("Player position: " + transform.position);
 
         float distanceBetweenPlayerAndShoppingCart = Vector3.Distance(this.transform.position, shoppingCart.transform.position);
         if (distanceBetweenPlayerAndShoppingCart < 1.5f & (isLeftIndexTriggerPressed() | isRightIndexTriggerPressed()))
@@ -74,5 +87,7 @@ public class PlayerCartMovement : MonoBehaviour
         return OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.0f;
     }
 
-    
+
+
+
 }

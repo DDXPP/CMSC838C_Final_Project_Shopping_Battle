@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -414}
+  m_AnchoredPosition: {x: 0, y: -476}
   m_SizeDelta: {x: -300, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &45373345
@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: START (Y)
+  m_text: PLAY (Y)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df48ff13d8f2c4c7080a20d25cf84e20, type: 2}
   m_sharedMaterial: {fileID: -676321058840472280, guid: df48ff13d8f2c4c7080a20d25cf84e20,
@@ -1534,7 +1534,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'How to play: use the left thumbstick to move, press the any hand trigger
-    to grab, press any index trigger to push the cart, press button A to enable teleportation.'
+    to grab, press any index trigger to push the cart, press button A to enable teleportation,
+    press button X to restart the game.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df48ff13d8f2c4c7080a20d25cf84e20, type: 2}
   m_sharedMaterial: {fileID: -676321058840472280, guid: df48ff13d8f2c4c7080a20d25cf84e20,
