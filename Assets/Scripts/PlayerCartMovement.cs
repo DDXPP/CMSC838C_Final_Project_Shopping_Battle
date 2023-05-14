@@ -16,7 +16,7 @@ public class PlayerCartMovement : MonoBehaviour
 
     void Start() 
     {
-        playerMovingSpeed = 3.0f;
+        playerMovingSpeed = 2.0f;
     }
 
     private void Respawn()
