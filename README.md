@@ -1,3 +1,3 @@
 # CMSC838C Final Project - Shopping Battle
 
-After cloning this repo, please download the [lighting data](https://drive.google.com/file/d/18AqXIRFzW7ufsJJX40VOXc9PYOexJoXU/view?usp=share_link) and import it.
+To import the lighting data, please download the [lighting data](https://drive.google.com/drive/folders/1XmjJS1-bC0UMmmgQ37plzQO2NDo-EUVX?usp=sharing) and import it in Unity. Alternativelt, open the project in Unity Editor, then go to Window → Rendering → Lighting, and click "Generate Lighting". 
