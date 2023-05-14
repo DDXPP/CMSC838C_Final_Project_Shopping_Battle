@@ -43,7 +43,7 @@ public class quadCollider : MonoBehaviour
         }
 
 
-        collider_scale_kart = new Vector3(this.transform.localScale.x / 3, this.transform.localScale.y / 4, this.transform.localScale.z * 10);
+        collider_scale_kart = new Vector3(this.transform.localScale.x / 4, this.transform.localScale.y / 4, this.transform.localScale.z * 10);
         itemInsideZone_kart = Physics.OverlapBox(this.transform.position, collider_scale_kart, Quaternion.identity, m_LayerMask);
 
         foreach (Collider collider in itemInsideZone)
